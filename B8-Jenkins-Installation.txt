@@ -1,0 +1,32 @@
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+  
+  
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+sudo systemctl enable jenkins
+
+sudo systemctl status jenkins
+
+
+//If error 
+
+sudo systemctl stop jenkins
+
+
+Note:
+
+* open the browser : localhost:8080
+* Copy the password path
+* open the password path in CLI
+  cat <PATH>
+  copy the password
+* Paste in the browser in "Administrator password"
+
+  
